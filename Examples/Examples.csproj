@@ -46,9 +46,12 @@
   <ItemGroup>
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Common\Customer.cs" />
+    <Compile Include="Delegates\Actions.cs" />
     <Compile Include="Delegates\Delegates.cs" />
     <Compile Include="Common\Employee.cs" />
+    <Compile Include="Delegates\Funcs.cs" />
     <Compile Include="Enums\Enums.cs" />
+    <Compile Include="Events\Events.cs" />
     <Compile Include="Generics\Generics.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

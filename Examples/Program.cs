@@ -18,6 +18,7 @@ namespace Examples
 
             examplesToExecute = GetTypesToExecute();
 
+
             if(examplesToExecute.Keys.Contains(Constants.Delegates) && (examplesToExecute[Constants.Delegates] == true))
             {
                Delegates.Delegates.UseDelegates();
@@ -33,8 +34,24 @@ namespace Examples
                 Generics.Generics.UseGenerics();
             }
 
+            if (examplesToExecute.Keys.Contains(Constants.Events) && (examplesToExecute[Constants.Events] == true))
+            {
+                
+            }
+
+            if (examplesToExecute.Keys.Contains(Constants.Actions) && (examplesToExecute[Constants.Actions] == true))
+            {
+                Delegates.Actions.UseActions();
+            }
+
+            if (examplesToExecute.Keys.Contains(Constants.Funcs) && (examplesToExecute[Constants.Funcs] == true))
+            {
+
+            }
+
             Console.ReadLine();
             //eventovi - observe and subscribe
+            //multithreading
         }
 
         private static Dictionary<string, bool> GetTypesToExecute()
@@ -44,21 +61,33 @@ namespace Examples
             try
             {
 
-                string execudeDelegatesCodeValue = ConfigurationManager.AppSettings[Constants.Delegates];
-                string execudeEnumsCodeValue = ConfigurationManager.AppSettings[Constants.Enums];
-                string execudeGenericsCodeValue = ConfigurationManager.AppSettings[Constants.Generics];
+                string executeDelegatesCodeValue = ConfigurationManager.AppSettings[Constants.Delegates];
+                string executeEnumsCodeValue = ConfigurationManager.AppSettings[Constants.Enums];
+                string executeGenericsCodeValue = ConfigurationManager.AppSettings[Constants.Generics];
+                string executeEventsCodeValue = ConfigurationManager.AppSettings[Constants.Events];
+                string executeActionsCodeValue = ConfigurationManager.AppSettings[Constants.Actions];
+                string executeFuncsCodeValue = ConfigurationManager.AppSettings[Constants.Funcs];
 
-                bool execudeDelegatesCode;
-                bool execudeEnumsCode;
-                bool execudeGenericsCode;
+                bool executeDelegatesCode;
+                bool executeEnumsCode;
+                bool executeGenericsCode;
+                bool executeEventsCode;
+                bool executeActionsCode;
+                bool executeFuncsCode;
 
-                bool.TryParse(execudeDelegatesCodeValue, out execudeDelegatesCode);
-                bool.TryParse(execudeEnumsCodeValue, out execudeEnumsCode);
-                bool.TryParse(execudeGenericsCodeValue, out execudeGenericsCode);
+                bool.TryParse(executeDelegatesCodeValue, out executeDelegatesCode);
+                bool.TryParse(executeEnumsCodeValue, out executeEnumsCode);
+                bool.TryParse(executeGenericsCodeValue, out executeGenericsCode);
+                bool.TryParse(executeEventsCodeValue, out executeEventsCode);
+                bool.TryParse(executeActionsCodeValue, out executeActionsCode);
+                bool.TryParse(executeFuncsCodeValue, out executeFuncsCode);
 
-                examplesToExecute.Add(Constants.Delegates, execudeDelegatesCode);
-                examplesToExecute.Add(Constants.Enums, execudeEnumsCode);
-                examplesToExecute.Add(Constants.Generics, execudeGenericsCode);
+                examplesToExecute.Add(Constants.Delegates, executeDelegatesCode);
+                examplesToExecute.Add(Constants.Enums, executeEnumsCode);
+                examplesToExecute.Add(Constants.Generics, executeGenericsCode);
+                examplesToExecute.Add(Constants.Events, executeEventsCode);
+                examplesToExecute.Add(Constants.Actions, executeActionsCode);
+                examplesToExecute.Add(Constants.Funcs, executeFuncsCode);
 
                 return examplesToExecute;
             }
