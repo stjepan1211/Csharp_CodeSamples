@@ -36,7 +36,7 @@ namespace Examples
 
             if (examplesToExecute.Keys.Contains(Constants.Events) && (examplesToExecute[Constants.Events] == true))
             {
-                
+                Events.Events.UseEvents();   
             }
 
             if (examplesToExecute.Keys.Contains(Constants.Actions) && (examplesToExecute[Constants.Actions] == true))
