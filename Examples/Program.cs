@@ -50,7 +50,6 @@ namespace Examples
             }
 
             Console.ReadLine();
-            //eventovi - observe and subscribe
             //multithreading
         }
 
